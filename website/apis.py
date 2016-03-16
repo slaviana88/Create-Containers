@@ -1,8 +1,10 @@
 from subprocess import check_output
-from .local_settings import AUTH_KEY
+from django.conf import settings
 import json
 import urllib.parse
 import time
+
+AUTH_KEY = settings.AUTH_KEY
 
 CLOUD_CREATE = """request={"action":"cloudCreate",
                             "authorization_key":"%s",

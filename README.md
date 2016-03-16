@@ -1,0 +1,1 @@
+If you want to create containers you should run following command - `python3 manage.py create_container`.

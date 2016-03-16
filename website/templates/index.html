@@ -1,0 +1,39 @@
+{% load staticfiles%}
+<html>
+<head>
+    <title>Information about containers</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+  </head>
+ <body>
+    <div>
+       <table border="1">
+         <thead>
+         <th>Owner</th>
+         <th  id="ssh_column">SSH Key</th>
+         <th>Container</th>
+         <th>Status</th> 
+         </thead>
+
+        <tbody>
+        {% for container in containers %}
+        <tr>
+            <td>{{container.name_owner}}</td>
+            <td class='content-container'>
+              <p class='content hidden'>
+                {{container.ssh_key}}
+              </p>
+              <button class='show-content'>Show SSH</button>
+              <button class='hide-content hidden'>Hide SSH</button>
+          </td>
+          <td>{{container.container_ip}}</td>
+          <td>{{container.status}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    </div>
+    <a href="{% url 'create-container' %}" id="link-create-container">Create new container</a> 
+<script type='text/javascript' src='http://code.jquery.com/jquery-2.2.1.js'></script>
+<script type='text/javascript' src="{% static 'js/app.js'%}"></script>
+ </body>
+</html>

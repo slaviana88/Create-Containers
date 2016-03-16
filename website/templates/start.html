@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create container</title>
+		<link href="{% static 'css/styles.css' %}" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<form action="" method="POST">
+						<h1>Create Container</h1>
+						{% csrf_token %}
+						{% for field in form %} 
+						<div>
+						{{field.label_tag}}</div>
+						<div>{{ field }} </div>
+						<div>{{ field.errors}}</div>
+						{%endfor%}
+						<input type="submit" value="OK">
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

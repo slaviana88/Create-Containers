@@ -1,2 +1,6 @@
-Django==1.8.5
+
+argparse==1.2.1
+ecdsa==0.13
+pycrypto==2.6.1
 sshpubkeys==1.0.6
+wsgiref==0.1.2

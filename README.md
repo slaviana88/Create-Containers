@@ -1,6 +1,6 @@
 # Create Containers System
 
-Django application, that communicates with API's Kyup to create new containers. 
+Django application, that communicates with Kuyp's API to create new containers. 
 
 Each customer adds the name and SSH Key in the following form:
 
